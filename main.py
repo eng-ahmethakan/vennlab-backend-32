@@ -176,3 +176,7 @@ async def ai_report(req: AIRequest):
     req.user_prompt = "Bu Venn analizinden detaylı akademik bir rapor oluştur."
     result = await ai_command(req)
     return {"report": result.report or result.answer}
+
+@app.get("/")
+def root():
+    return {"status": "VennLab backend running"}
